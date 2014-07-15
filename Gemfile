@@ -38,3 +38,6 @@ gem 'bootstrap-sass', '2.3.2.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :assets do
+  gem 'twitter-bootstrap-rails'
+end
