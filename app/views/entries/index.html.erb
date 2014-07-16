@@ -1,11 +1,12 @@
 <h1>Listing entries</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Value</th>
-      <th>Description</th>
-      <th>Date</th>
+      <th>Descrição</th>
+      <th>Valor</th>
+      <th>Data</th>
+      <th>Subaccount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,12 +14,13 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.value %></td>
         <td><%= entry.description %></td>
+        <td><%= entry.value %></td>
         <td><%= entry.date %></td>
-        <td><%= link_to 'Show', entry %></td>
-        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= entry.subaccount_id %></td>
+        <td><%= link_to '', entry, class: 'fa fa-caret-square-o-right'%></td>
+        <td><%= link_to '', edit_entry_path(entry), class: "fa fa-pencil" %></td>
+        <td><%= link_to '', entry, method: :delete, data: { confirm: 'Tem certeza que deseja excluir ?' }, class: 'fa fa-trash-o' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to new_entry_path do %>
+  Novo <i class='fa fa-plus'></i>
+<% end %>

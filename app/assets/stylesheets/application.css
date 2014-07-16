@@ -18,3 +18,7 @@
 body { padding-top: 60px; }
 
 @import "twitter/bootstrap/responsive";
+
+a{
+	color: black!important;
+}

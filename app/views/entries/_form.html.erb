@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :value %><br>
+    <%= f.label :value, "Valor" %><br>
     <%= f.text_field :value %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :date, "Data" %><br>
+    <%= f.date_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Descrição" %><br>
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.label :subaccount, "Subconta de referência" %><br>
+    <%= f.text_field :subaccount_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

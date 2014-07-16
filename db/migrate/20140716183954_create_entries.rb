@@ -1,10 +1,11 @@
 class CreateEntries < ActiveRecord::Migration
   def change
     create_table :entries do |t|
-      t.float :value, default: 0
-      t.string :description
+      t.float :value
       t.date :date
-      t.references :accounts
+      t.string :description
+      t.references :subaccount, index: true
+
       t.timestamps
     end
   end

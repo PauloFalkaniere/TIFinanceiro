@@ -11,34 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140702184307) do
+ActiveRecord::Schema.define(version: 20140716183954) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
-    t.float    "value", default: 0
-    t.float    "total", default: 0
+    t.float    "total",       default: 0.0
     t.string   "description"
     t.integer  "budget_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "accounts", ["budget_id"], name: "index_accounts_on_budget_id", using: :btree
+
   create_table "budgets", force: true do |t|
     t.string   "name"
-    t.float    "value", default: 0
-    t.float    "total", default: 0
+    t.float    "value",       default: 0.0
+    t.float    "total",       default: 0.0
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "entries", force: true do |t|
-    t.float    "value", default: 0
-    t.string   "description"
+    t.float    "value"
     t.date     "date"
+    t.string   "description"
+    t.integer  "subaccount_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entries", ["subaccount_id"], name: "index_entries_on_subaccount_id", using: :btree
+
+  create_table "sub_accounts", force: true do |t|
+    t.string   "name"
+    t.float    "total"
+    t.string   "description"
     t.integer  "accounts_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sub_accounts", ["accounts_id"], name: "index_sub_accounts_on_accounts_id", using: :btree
 
 end

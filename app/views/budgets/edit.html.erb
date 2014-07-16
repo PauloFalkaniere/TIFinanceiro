@@ -1,6 +1,10 @@
-<h1>Editing budget</h1>
+<h1>Editar Orçamento</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @budget %> |
-<%= link_to 'Back', budgets_path %>
+<%= link_to  @budget do %>
+	Exibir <i class='fa fa-plus'></i>
+<% end %>
+<%= link_to budgets_path do %>
+	Voltar <i class="fa fa-arrow-left"></i>
+<% end %>

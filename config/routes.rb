@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :entries
 
+  resources :sub_accounts
+
   resources :accounts
 
   resources :budgets

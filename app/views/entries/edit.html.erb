@@ -2,5 +2,9 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @entry %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to  @entry do %>
+	Exibir <i class='fa fa-plus'></i>
+<% end %>
+<%= link_to entries_path do %>
+	Voltar <i class="fa fa-arrow-left"></i>
+<% end %>

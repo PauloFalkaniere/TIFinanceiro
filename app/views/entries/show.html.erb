@@ -6,14 +6,25 @@
 </p>
 
 <p>
+  <strong>Date:</strong>
+  <%= @entry.date %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @entry.description %>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @entry.date %>
+  <strong>Subaccount:</strong>
+  <%= @entry.subaccount_id %>
 </p>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+<%= link_to edit_entry_path(@entry) do %>
+	Editar <i class="fa fa-arrow-right"></i>
+<% end %>
+|
+<%= link_to entries_path do %>
+	Voltar <i class="fa fa-arrow-left"></i>
+<% end %>
+

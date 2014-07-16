@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @account.name %>
 </p>
 
 <p>
-  <strong>Value:</strong>
-  <%= @account.value %>
+  <strong>Total:</strong>
+  <%= @account.total %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @account.description %>
 </p>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to  edit_account_path(@account) do %>
+  Editar <i class='fa fa-pencil'></i>
+<% end %>
+|
+<%= link_to accounts_path do %>
+	Voltar <i class='fa fa-arrow-left'></i>
+<% end %>

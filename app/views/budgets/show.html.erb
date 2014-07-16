@@ -15,5 +15,11 @@
   <%= @budget.description %>
 </p>
 
-<%= link_to 'Edit', edit_budget_path(@budget) %> |
-<%= link_to 'Back', budgets_path %>
+<%= link_to edit_budget_path(@budget) do %>
+	Editar <i class="fa fa-arrow-right"></i>
+<% end %>
+|
+<%= link_to budgets_path do %>
+	Voltar <i class="fa fa-arrow-left"></i>
+<% end %>
+

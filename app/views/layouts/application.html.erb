@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
  <div class="navbar navbar-fixed-top">
@@ -19,9 +20,9 @@
         <div class="nav-collapse">
           <ul class="nav">
             <li><%= link_to "Orçamentos", budgets_path %></li>
-            <li><%= link_to "Price List" %></li>
-            <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Cart" %></li>
+            <li><%= link_to "Conta", accounts_path %></li>
+            <li><%= link_to "Sub-Conta", sub_accounts_path %></li>
+            <li><%= link_to "Lançamentos", entries_path %></li>
           </ul>
         </div>
       </div>
